@@ -42,7 +42,7 @@ def follow(syslog_file):
             entry = parse_log_line(line)
             if not entry:
                 continue
-            json_entry = show_entry(entry)
+            json_entry = {"log": show_entry(entry)}
             pubsub.send_page_data(json_entry, 'www_logs')
 
 

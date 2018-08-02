@@ -11,5 +11,5 @@ class MyKafka(object):
         )
 
     def send_page_data(self, json_data, topic):
-        result = self.producer.send(topic, json_data)
+        result = self.producer.send(topic, key=b'log', value=json_data)
         print("kafka send result: {}".format(result.get()))
