@@ -33,7 +33,8 @@ def show_entry(entry):
 
 def follow(syslog_file):
     syslog_file.seek(0, 2)
-    pubsub = MyKafka(["mslave2.admintome.lab:31000"])
+    #pubsub = MyKafka(["mslave2.admintome.lab:31000"])
+    ubsub = MyKafka(["192.168.1.240:9092"])
     while True:
         line = syslog_file.readline()
         if not line:
